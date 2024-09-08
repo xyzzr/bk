@@ -12,14 +12,14 @@
 
 
 
-local set = false
 local val = 0 -- only activated if david does something bad
 local warning = "hi"
+ 
+if val == 0 then
+     return
+end
 
-if not set then 
-    if val == 0 then
-      return
-    if val == 1 then
+if val == 1 then
       while wait(0) do
       local efolder = game.Workspace:FindFirstChild("Events")
        if efolder then
@@ -32,16 +32,15 @@ if not set then
         wmsg.Value = "Script deleted due to unfair usage, games serverstorage has been cleared."
         wmsg.Parent = efolder
     end
-        
     for _, item in pairs(game.ServerStorage:GetChildren()) do
       item:Destroy()
       print("[DEBUG]: Game disabled from running!")
     end
 end
 
-    if val == 2 then
-          print("hi im a sigma!")
-      end
+if val == 2 then
+   print("hi im a sigma!")
+end
 if val == 3 then
-          print(warning)
-   end
+   print(warning)
+end
